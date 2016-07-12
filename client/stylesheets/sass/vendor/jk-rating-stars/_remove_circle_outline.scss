@@ -1,0 +1,7 @@
+.jk-rating-stars-container {
+	a:first-child:not([ng-mouseover]) {
+		i {
+			display:none;
+		}
+	}
+}

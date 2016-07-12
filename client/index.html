@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="videoPortal" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="videoPortal" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="videoPortal" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="videoPortal" class="no-js" ng-controller="HeadController as HeadCtrl"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{HeadCtrl.page.title()}}</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="/stylesheets/style.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default clear-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/#/list">
+						Video Portal
+					</a>
+					<auth-status></auth-status>
+				</div>
+			</div>
+		</nav>
+		<!--[if lt IE 7]>
+		  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div class='container'>
+			<div ui-view></div>
+		</div>
+
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+		<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+		<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="bower_components/angular-md5/angular-md5.min.js"></script>
+		<script src="bower_components/angular-jk-rating-stars/dist/jk-rating-stars.min.js"></script>
+		<script src="javascripts/vendor/ng-infinite-scroll/ng-infinite-scroll.js"></script>
+		<script src="javascripts/helpers/helpers.js"></script>
+		<script src="javascripts/ngapp.js"></script>
+		<script src="javascripts/routes.js"></script>
+		<script src="javascripts/interceptor.js"></script>
+		<script src="javascripts/run.js"></script>
+		<script src="javascripts/factories/page.factory.js"></script>
+		<script src="javascripts/factories/user.factory.js"></script>
+		<script src="javascripts/services/authenticate.service.js"></script>
+		<script src="javascripts/services/loginModal.service.js"></script>
+		<script src="javascripts/services/videoApi.service.js"></script>
+		<script src="javascripts/controllers/detail.controller.js"></script>
+		<script src="javascripts/controllers/list.controller.js"></script>
+		<script src="javascripts/controllers/loginModal.controller.js"></script>
+		<script src="javascripts/controllers/head.controller.js"></script>
+		<script src="javascripts/components/authStatus.component.js"></script>
+		<script src="javascripts/components/videoCell.component.js"></script>
+		<script src="javascripts/components/videoList.component.js"></script>
+		<script src="javascripts/directives/videoWrapper.directive.js"></script>
+		<script src="javascripts/directives/stopLoadOnChange.directive.js"></script>
+	</body>
+</html>

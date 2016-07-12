@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="truncate-ellipsis">
+			<a ui-sref='authenticated.detail({title:"{{$ctrl.title}}",id:"{{$ctrl.id}}"})'
+			   href="#/detail/{{$ctrl.title}}/{{$ctrl.id}}">
+				{{$ctrl.name}}</a></div>
+		</div>
+	<div class="panel-body">
+		<video-wrapper url="{{$ctrl.url}}"></video-wrapper>
+	</div>
+	<div class="panel-footer">
+		<div class="text-center">
+			<jk-rating-stars 	read-only="$ctrl.rated"
+								max-rating=5 
+								rating="rating" 
+								on-rating="$ctrl.addRating(rating)"></jk-rating-stars>
+		</div>
+		<div ng-show="$ctrl.showRating" class="rating text-center">Average user rating: {{$ctrl.rating.toFixed(2)}}</div>
+		<div class="description {{$ctrl.lineClamp}}">{{$ctrl.description}}</div>
+	</div>
+</div>

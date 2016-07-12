@@ -1,0 +1,11 @@
+<div class="row videoList">
+	<div class="{{$ctrl.columnClass}} fill-height-or-more test-column-class" ng-repeat="video in $ctrl.list">
+		<video-cell id={{video._id}}
+					name={{video.name}}
+					description={{video.description}}
+					url={{video.url}}
+					ratings={{video.ratings}}
+					line-clamp="line-clamp">
+		</video-cell>
+	</div>
+</div>
