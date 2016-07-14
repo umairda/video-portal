@@ -19,7 +19,7 @@
 		
 		it('should be able to login (auth.login)', function(done) {
 			
-			$httpBackend.when('POST','http://localhost:3000/user/auth')
+			$httpBackend.when('POST','/user/auth')
 						.respond({status:"success",sessionId:'someId',username:'test'});
 						
 			auth.login('test','test2').then(function(response) {
@@ -33,7 +33,7 @@
 		});
 		
 		it('should be able to logout', function(done) {
-			$httpBackend.when('GET','http://localhost:3000/user/logout?sessionId='+123)
+			$httpBackend.when('GET','/user/logout?sessionId='+123)
 						.respond({status:"success"});
 						
 			auth.logout(123).then(function(response) {

@@ -16,7 +16,7 @@ var helperFunctions = require('./helpers/helperFunctions');
 
 
 // Uncomment the following lines to start logging requests to consoles.
-// app.use(morgan('combined'));
+app.use(morgan('combined'));
 // parse application/x-www-form-urlencoded.
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json.
@@ -34,6 +34,11 @@ routes(app);
 app.use('/videos',express.static('videos'));
 // serve client side code.
 app.use('/',express.static('client'));
+
+//set app name for npm stop
+process.title = "videoPortal";
+console.log("App name:",process.title);
+
 
 //Finally starting the listener
 app.listen(configs.applicationPort, function () {

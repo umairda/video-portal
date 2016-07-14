@@ -20,21 +20,21 @@
 			
 			return $http({
 				method: 'GET',
-				url: 'http://localhost:3000/videos?sessionId='+sessionId+'&skip='+skip+limitQuery,
+				url: '/videos?sessionId='+sessionId+'&skip='+skip+limitQuery,
 			});
 		};
 		
 		vm.getSingle = function(sessionId,videoId) {
 			return $http({
 				method: 'GET',
-				url: 'http://localhost:3000/video?sessionId='+sessionId+'&videoId='+videoId,					
+				url: '/video?sessionId='+sessionId+'&videoId='+videoId,					
 			});
 		};
 		
 		vm.rateVideo = function(sessionId,videoId,rating) {
 			return $http({
 				method: 'POST',
-				url: 'http://localhost:3000/video/ratings?sessionId='+sessionId,
+				url: '/video/ratings?sessionId='+sessionId,
 				data: { videoId: videoId, rating: rating }
 			});
 		};
