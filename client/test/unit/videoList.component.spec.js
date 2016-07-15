@@ -6,7 +6,7 @@
 		var $q, $scope;
 		var element, _data = [], dataCount = 5;
 		
-		beforeEach(module('videoPortal.components'));
+		beforeEach(module('videoPortal'));
 		beforeEach(module('my.templates'));
 		beforeEach(module(function($provide) {			
 			$provide.service('User',function() {

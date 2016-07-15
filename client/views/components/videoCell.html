@@ -1,8 +1,7 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<div class="truncate-ellipsis">
-			<a ui-sref='authenticated.detail({title:"{{$ctrl.title}}",id:"{{$ctrl.id}}"})'
-			   href="#/detail/{{$ctrl.title}}/{{$ctrl.id}}">
+			<a ng-href="{{$ctrl.getLinkUrl()}}">
 				{{$ctrl.name}}</a></div>
 		</div>
 	<div class="panel-body">

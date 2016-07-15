@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 	
-	var videoCellController = function($scope,User,videoApi,$log) {
+	var videoCellController = function($scope,$state,User,videoApi,$log) {
 		//$log.log('videoCell controller ready',this);
 		var vm = this;
 		vm.rating = 0;
@@ -93,6 +93,24 @@
 				vm.rating = vm.createRating(vm.ratings);
 			}
 		};
+		
+		vm.getLinkUrl = function() {
+			return $state.href('authenticated.detail', {id: vm.id, title: vm.title});
+		};
+		
+		/*
+		$scope.$watch(function(scope) {
+			return vm.title;
+		},function(newValue,oldValue) {
+			if (angular.isDefined(newValue)) {
+				setTimeout(function() {
+					$scope.$apply(function() {
+						console.log('binding updated: ',newValue);
+					});
+				},0);
+			}
+		});
+		*/
 		
 		$scope.$watch(function(scope) {
 			return vm.id;

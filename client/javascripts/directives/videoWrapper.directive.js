@@ -15,7 +15,6 @@
 			var extension = fileParts[fileParts.length-1];
 			
 			var posterFilename = filename.replace(extension,'gif');
-			console.log(posterFilename);
 			
 			return '/images/'+posterFilename;
 		};

@@ -7,7 +7,7 @@
 		var $q, $scope, User, videoApi;
 		var element, template;
 		
-		beforeEach(module('videoPortal.components'));
+		beforeEach(module('videoPortal'));
 		beforeEach(module('my.templates'));
 		beforeEach(module(function($provide) {			
 			$provide.service('User',function() {
@@ -41,7 +41,7 @@
 				
 			});
 		}));
-		beforeEach(inject(function($compile,$componentController,_$q_,$rootScope,_User_,_videoApi_) {
+		beforeEach(inject(function($compile,$componentController,_$q_,$rootScope,$state,_User_,_videoApi_) {
 			$q=_$q_;
 			$scope = $rootScope.$new();
 			User = _User_;
@@ -49,6 +49,7 @@
 			
 			videoCellCtrl = $componentController('videoCell', {
 				$scope: $scope,
+				$state: $state,
 				User: User,
 				videoApi: videoApi
 			});
@@ -70,17 +71,17 @@
 		});	
 		
 		it("should set the binding: id", function() {
-			var findId = element[0].querySelector('a[ui-sref]').getAttribute('ui-sref');
+			var findId = element[0].querySelector('a[ng-href]').getAttribute('ng-href');
 			expect(findId.search($scope.id)).not.toBe(-1);
 		});
 		
 		it("should set the binding: title", function() {
-			var findTitle = element[0].querySelector('a[ui-sref]').getAttribute('ui-sref');
+			var findTitle = element[0].querySelector('a[ng-href]').getAttribute('ng-href');
 			expect(findTitle.search(videoCellCtrl.createTitle($scope.name))).not.toBe(-1);
 		});
 		
 		it("should set the binding: name", function() {
-			var findA = element.find('a');
+			var findA = angular.element(element[0].querySelector('a[ng-href]'));
 			expect(findA.text().trim()).toBe($scope.name);
 		});
 		
