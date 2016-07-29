@@ -1,7 +1,6 @@
 <h3>Video List</h3>
 
-<div infinite-scroll="listCtrl.loadMore()" infinite-scroll-distance=2>
-	<div ng-repeat="num in listCtrl.infiniteScrollArray">
-		<video-list skip="num" limit=4></video-list>
-	</div>
+<video-list skip=0 limit=4></video-list>
+<div ng-repeat="num in listCtrl.infiniteScrollArray">
+	<video-list skip="num" limit=4></video-list>
 </div>

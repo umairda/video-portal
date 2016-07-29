@@ -8,7 +8,6 @@
 		var vm = this;
 		vm.page = Page;
 		vm.page.setTitle('Video Portal');
-
 		
 		$rootScope.$on('loading:progress',function() {
 

@@ -12,7 +12,6 @@
 	var app = angular.module('videoPortal');
 	
 	app.config(function ($httpProvider) {
-
 		$httpProvider.interceptors.push(function ($timeout, $q, $injector) {
 			var loginModal, $http, $state;
 

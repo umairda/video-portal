@@ -1,8 +1,7 @@
 (function() {
 	'use strict';
 	
-	var videoCellController = function($scope,$state,User,videoApi,$log) {
-		//$log.log('videoCell controller ready',this);
+	var videoCellController = function($scope,$state,User,videoApi) {
 		var vm = this;
 		vm.rating = 0;
 		vm.rated = false;
@@ -56,8 +55,10 @@
 			return title.replace(/[^a-z0-9]/ig,'-');
 		};
 
+		//get video information when providede with only the id
 		vm.getSingle = function(id) {
 			return videoApi.getSingle(User.getSessionId(),id).then(function(response) {
+					//use an object here
 					if (response.data.status === 'success') {
 						vm.id = response.data.data._id;
 						vm.name = response.data.data.name;
@@ -76,6 +77,7 @@
 			});
 		};
 		
+		//calculate video ratings and create title
 		vm.update = function() {
 			if (isSet(vm.name)) {
 				vm.title = vm.createTitle(vm.name);
@@ -94,24 +96,12 @@
 			}
 		};
 		
+		//can't set dynamic link in ui-sref, so use $state.href instead
 		vm.getLinkUrl = function() {
 			return $state.href('authenticated.detail', {id: vm.id, title: vm.title});
 		};
-		
-		/*
-		$scope.$watch(function(scope) {
-			return vm.title;
-		},function(newValue,oldValue) {
-			if (angular.isDefined(newValue)) {
-				setTimeout(function() {
-					$scope.$apply(function() {
-						console.log('binding updated: ',newValue);
-					});
-				},0);
-			}
-		});
-		*/
-		
+
+		//calculate ratings and create title if the video id/info is changed
 		$scope.$watch(function(scope) {
 			return vm.id;
 		},function(newValue,oldValue) {		
@@ -138,7 +128,7 @@
 			description: '@description',
 			url: '@url',
 			ratings: '@ratings',
-			lineClamp: '@?lineClamp'
+			lineClamp: '@?lineClamp'	//used for setting max height of description text before ellipsis
 		},
 		controller: videoCellController,
 		templateUrl: "/views/components/videoCell.html",

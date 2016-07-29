@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>{{HeadCtrl.page.title()}}</title>
+		<title ng-bind="HeadCtrl.page.title()">Video Portal</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,7 +14,7 @@
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	</head>
-	<body>
+	<body style="overflow:scroll" when-scrolled-broadcast="loadMore">
 		<nav class="navbar navbar-default clear-top">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -41,7 +41,6 @@
 		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 		<script src="bower_components/angular-md5/angular-md5.min.js"></script>
 		<script src="bower_components/angular-jk-rating-stars/dist/jk-rating-stars.min.js"></script>
-		<script src="javascripts/vendor/ng-infinite-scroll/ng-infinite-scroll.js"></script>
 		<script src="javascripts/helpers/helpers.js"></script>
 		<script src="javascripts/ngapp.js"></script>
 		<script src="javascripts/routes.js"></script>
@@ -59,6 +58,7 @@
 		<script src="javascripts/components/authStatus.component.js"></script>
 		<script src="javascripts/components/videoCell.component.js"></script>
 		<script src="javascripts/components/videoList.component.js"></script>
+		<script src="javascripts/directives/whenScrolledBroadcast.directive.js"></script>
 		<script src="javascripts/directives/videoWrapper.directive.js"></script>
 		<script src="javascripts/directives/stopLoadOnChange.directive.js"></script>
 	</body>

@@ -13,7 +13,6 @@
 		'ui.router',
 		'ui.bootstrap',
 		'jkAngularRatingStars',
-		'infinite-scroll',
 		'videoPortal.helpers',
 		'videoPortal.components',
 		'videoPortal.controllers',
