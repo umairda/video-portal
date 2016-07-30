@@ -34,7 +34,7 @@ routes(app);
 app.use('/videos',express.static('videos'));
 // serve client side code.
 app.use('/',express.static('client'));
-
+console.log('express.static.mime',express.static.mime);
 //set app name for npm stop
 process.title = "videoPortal";
 console.log("App name:",process.title);

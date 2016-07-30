@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "karma start test/karma.conf.js",
+    "start": "node index.js",
+    "stop": "pkill --signal SIGINT videoPortal"
   },
   "author": "",
   "license": "ISC",

@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '../',
+    basePath: '../client/',
 
 
     // frameworks to use
@@ -30,7 +30,7 @@ module.exports = function(config) {
 	  'javascripts/ngapp.js',
 	  'javascripts/*.js',
       'javascripts/**/*.js',
-	  'test/unit/**/*spec.js',
+	  '../test/unit/**/*spec.js',
 	  'views/**/*.html',
 	  'views/*.html',
 	  'partials/*.html',

@@ -1,5 +1,5 @@
 <div class="video-wrapper embed-responsive {{ctrl.aspectRatio}}">
-	<video id="{{ctrl.videoId}}" class="embed-responsive-item" ng-attr-poster="{{ctrl.posterLink}}" controls stop-load-on-change>
+	<video preload="none" id="{{ctrl.videoId}}" class="embed-responsive-item" ng-attr-poster="{{ctrl.posterLink}}" controls stop-load-on-change>
 		<source src="{{ctrl.url}}" type="{{ctrl.type}}" stop-load-on-change>
 		Your browser does not support the video tag.
 	</video>

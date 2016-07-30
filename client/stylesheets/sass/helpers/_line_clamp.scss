@@ -1,6 +1,30 @@
+/*
 .line-clamp {
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;  
   overflow:hidden;
 }
+*/
+
+//@-moz-document url-prefix() {
+    .line-clamp {
+		position: relative;
+		height: 4.2em;
+		overflow:hidden;
+	}
+	
+	.line-clamp:after {
+		content: "";
+		text-align: right;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 70%;
+		height: 1.2em;
+		background: linear-gradient(to right, rgba(245, 245, 245, 0), rgba(245, 245, 245, 1) 50%);
+	}
+//}
+
+//@supports (-ms-accelerator:true) {
+//}

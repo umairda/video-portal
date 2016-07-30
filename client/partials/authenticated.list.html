@@ -2,5 +2,5 @@
 
 <video-list skip=0 limit=4></video-list>
 <div ng-repeat="num in listCtrl.infiniteScrollArray">
-	<video-list skip="num" limit=4></video-list>
+	<video-list skip="num.skip" limit=4></video-list>
 </div>

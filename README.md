@@ -1,4 +1,54 @@
-"# Video Portal"
+# Video Portal
+
+### Directory Structure
+```
+root
+|---client			//front-end source
+|   |---images				//video "poster" images
+|   |---javascripts			//angular source files
+|   |   |---components
+|   |   |---controllers
+|   |   |---directives
+|   |   |---factories
+|   |   |---helpers
+|   |   |---services
+|   |---partials			//html partials for ui-router
+|   |---stylesheets			//style.css is compiled using grunt
+|   |   |---sass
+|   |       |---base
+|   |       |---components
+|   |       |---helpers
+|   |       |---layout
+|   |       |---pages
+|   |       |---vendor
+|   |           |---bootstrap
+|   |           |---jk-rating-stars
+|   |           |---stylesheets		//my modifications to vendor styles
+|   |               |---bootstrap
+|   |                   |---mixins
+|   |---views
+|       |---components			//templates for angular components
+|       |---directives			//templates for angular directives
+|---controllers			//server-side
+|---helpers			
+|---models				//mongo models and functions
+|---routes
+|---test
+|   |---unit
+|---videos				//video mp4 files
+```
+
+### npm
+
+##### npm start 
+ - Starts Server
+
+##### npm stop
+ - Stops Server
+ 
+##### npm test
+ - Runs Karma tests
+
 
 ### Frameworks used
  - AngularJS 1.5
@@ -38,6 +88,11 @@
    up all of the child videoCells
  - An authStatus component resides in the navbar and indicates whether the user is
    logged in or not, and handles logging in and out
+ - Infinite Scrolling is implemented by broadcast messages when the document is scrolled.
+ - The whenScrolledBroadcast directive broadcasts a "loadMore" message when the document is
+   scrolled. The ListController listens for the message and upon receipt pushes video 
+   elements into an array. In the view an ng-repeat directive iterates over the ListController
+   array
    
 ### Services
  
@@ -67,12 +122,9 @@
  ### Sass/CSS
  
  - Grunt was used to compile Sass SCSS files into a single style.css stylesheet
- - I have included my package.json which resides in the folder below client
  
  ### 3rd Party Packages
  
  - jk-rating-stars was used with the appearance slightly modified to implement the
    star rating system
- - infinite-scroll was used to implement the lazy loading feature. The page controller
-   maintains an array containing the number of videos loaded on each scroll
 

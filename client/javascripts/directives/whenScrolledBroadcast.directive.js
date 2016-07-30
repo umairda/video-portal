@@ -14,11 +14,12 @@
 			var vm = this;
 			vm.scrollHandler = function() {
 				//console.log('raw.scrollHeight',raw.scrollHeight);
-				//console.log('raw.scrollTop',raw.scrollTop);
+				//console.log('$(window).scrollTop()',$(window).scrollTop());
+				//console.log('$document.scrollTop',$document.scrollTop());
 				//console.log('raw.offsetHeight',raw.offsetHeight);
 				
-				if (raw.scrollTop + raw.offsetHeight >= raw.scrollHeight) {
-					$rootScope.$broadcast(message,{});
+				if ($document.scrollTop() + raw.offsetHeight >= raw.scrollHeight) {
+					$rootScope.$broadcast(message,{ scrollTop: $document.scrollTop() });
 				}
 			};
 			

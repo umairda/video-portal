@@ -22,17 +22,24 @@
 		});
 		
 		it("\'s infiniteScrollArray should be initialized to [4]", function() {
-			expect(listCtrl.infiniteScrollArray[0]).toBe(4);
+			expect(listCtrl.infiniteScrollArray[0].skip).toBe(4);
 			expect(listCtrl.infiniteScrollArray.length).toBe(1);
 		});
 		
 		it("\'s loadMore function should push a 4 into infiniteScrollArray", function() {
-			listCtrl.loadMore();
-			expect(listCtrl.infiniteScrollArray[1]).toBe(8);
+			var data = {};
+			data.scrollTop = 20;
+			listCtrl.loadMore(data);
+			expect(listCtrl.infiniteScrollArray[1].skip).toBe(8);
 			expect(listCtrl.infiniteScrollArray.length).toBe(2);
 			
-			listCtrl.loadMore();
-			expect(listCtrl.infiniteScrollArray[2]).toBe(12);
+			data.scrollTop = 40;
+			listCtrl.loadMore(data);
+			expect(listCtrl.infiniteScrollArray[2].skip).toBe(12);
+			expect(listCtrl.infiniteScrollArray.length).toBe(3);
+			
+			//should not insert
+			listCtrl.loadMore(data);
 			expect(listCtrl.infiniteScrollArray.length).toBe(3);
 		});
 		
